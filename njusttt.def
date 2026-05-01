@@ -29,7 +29,7 @@
 \fi
 
 %% CJK font commands
-\renewcommand{\songti}{\CJKfamily{song}}
+\newcommand{\songti}{\CJKfamily{song}}
 \newcommand{\songbf}{\bfseries\CJKfamily{song}}
 \newcommand{\kaibf}{\bfseries\CJKfamily{kai}}
 \newcommand{\heibf}{\bfseries\CJKfamily{hei}}

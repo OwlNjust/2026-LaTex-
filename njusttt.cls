@@ -192,7 +192,7 @@
       {\kaibf\zihao{-2}\underline{\makebox[0.8\linewidth][c]{\NJUST@value@author}}}
       \par\vskip 2pt
       {\songti\zihao{5}（学生姓名）}
-      \par\vskip 16pt
+      \par\vskip 12pt
       {\kaibf\zihao{-2}\underline{\makebox[0.8\linewidth][c]{\NJUST@value@studentid}}}
       \par\vskip 2pt
       {\songti\zihao{5}（学号）}
@@ -203,10 +203,10 @@
     %% Bottom info table (左侧标签分散对齐，右侧填空等宽下划线)
     \begin{tabular}{@{} p{3.8cm} p{9cm} @{}}
       \makebox[3.8cm][s]{\songbf\zihao{4} 指\hspace{0.3em}导\hspace{0.3em}教\hspace{0.3em}师} &
-        \underline{\makebox[3cm][c]{\kaishu\zihao{4}\NJUST@value@advisor\quad\NJUST@value@advisortitle}} \\[10pt]
+        \underline{\makebox[9cm][c]{\kaishu\zihao{4}\NJUST@value@advisor\quad\NJUST@value@advisortitle}} \\[10pt]
       \makebox[3.8cm][s]{\songbf\zihao{4} 学\hspace{0.3em}生\hspace{0.3em}学\hspace{0.3em}院} &
         \underline{\makebox[9cm][c]{\kaishu\zihao{4}\NJUST@value@college}} \\[10pt]
-      \makebox[3.8cm][s]{\songbf\zihao{4} 专\hspace{0.3em}业} &
+      \makebox[3.8cm][s]{\songbf\zihao{4} 专\hspace{2.5em}业} &
         \underline{\makebox[9cm][c]{\kaishu\zihao{4}\NJUST@value@major}} \\[10pt]
       \makebox[3.8cm][s]{\songbf\zihao{4} 研\hspace{0.3em}究\hspace{0.3em}方\hspace{0.3em}向} &
         \underline{\makebox[9cm][c]{\kaishu\zihao{4}\NJUST@value@researchdir}} \\[10pt]
@@ -455,8 +455,10 @@
 %% ========================================
 %%  Figure and table captions (五号 10.5pt per 2026 spec)
 %% ========================================
-\captionsetup[figure]{font={songti,zihao{5}}}
-\captionsetup[table]{font={songti,zihao{5}}}
+%% Caption font: 五号宋体 (使用 DeclareCaptionFont 避免 font= key 解析问题)
+\DeclareCaptionFont{songfive}{\songti\zihao{5}}
+\captionsetup[figure]{font=songfive}
+\captionsetup[table]{font=songfive}
 
 %% ========================================
 %%  Helper commands
