@@ -206,7 +206,7 @@
         \underline{\makebox[9cm][c]{\kaishu\zihao{4}\NJUST@value@advisor\quad\NJUST@value@advisortitle}} \\[10pt]
       \makebox[3.8cm][s]{\songbf\zihao{4} 学\hspace{0.3em}生\hspace{0.3em}学\hspace{0.3em}院} &
         \underline{\makebox[9cm][c]{\kaishu\zihao{4}\NJUST@value@college}} \\[10pt]
-      \makebox[3.8cm][s]{\songbf\zihao{4} 专\hspace{2.8em}业} &
+      \makebox[3.8cm][s]{\songbf\zihao{4} 专\hspace{0em}业} &
         \underline{\makebox[9cm][c]{\kaishu\zihao{4}\NJUST@value@major}} \\[10pt]
       \makebox[3.8cm][s]{\songbf\zihao{4} 研\hspace{0.3em}究\hspace{0.3em}方\hspace{0.3em}向} &
         \underline{\makebox[9cm][c]{\kaishu\zihao{4}\NJUST@value@researchdir}} \\[10pt]

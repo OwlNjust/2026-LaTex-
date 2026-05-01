@@ -31,7 +31,9 @@
 %% CJK font commands
 \newcommand{\songti}{\CJKfamily{song}}
 \newcommand{\songbf}{\bfseries\CJKfamily{song}}
+\newcommand{\kaishu}{\CJKfamily{kai}}
 \newcommand{\kaibf}{\bfseries\CJKfamily{kai}}
+\newcommand{\heiti}{\CJKfamily{hei}}
 \newcommand{\heibf}{\bfseries\CJKfamily{hei}}
 \newcommand{\weibei}{\CJKfamily{weibei}}
 
