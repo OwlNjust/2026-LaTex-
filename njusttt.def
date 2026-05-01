@@ -1,4 +1,4 @@
-\ProvidesFile{njusttt.def}[2026/05/01 v1.0 NJUST thesis template definitions]
+\ProvidesFile{njusttt.def}[2026/05/01 v1.0 NJUST undergraduate thesis definitions]
 
 %% ========================================
 %%  Font setup (three tiers, flags set by njusttt.cls)
@@ -42,7 +42,7 @@
 \newcommand{\rmbfit}{\normalfont\rmfamily\bfseries\itshape}
 
 %% ========================================
-%%  Label strings (change here for university rebranding)
+%%  Label strings
 %% ========================================
 
 %% Abstract
@@ -66,163 +66,117 @@
 \def\NJUST@label@publications{附\NJUSTspace 录}
 \def\NJUST@label@thanks{致\NJUSTspace 谢}
 
-%% Cover header
-\def\NJUST@label@classification{分类号}
-\def\NJUST@label@confidential{密级}
-\def\NJUST@label@UDC{UDC\raisebox{.15cm}{\scriptsize{注1}}}
+%% Cover -- front cover (附件2.1)
+\def\NJUST@label@report{毕业设计（论文）报告}
+\def\NJUST@label@studentname{学生姓名}
+\def\NJUST@label@studentid{学\NJUSTspace 号}
+\def\NJUST@label@advisor{指导教师}
+\def\NJUST@label@college{学生学院}
+\def\NJUST@label@major{专\NJUSTspace 业}
+\def\NJUST@label@researchdir{研究方向}
+\def\NJUST@label@submitdate{提交时间}
 
-%% Cover title & author
-\def\NJUST@label@thesis{博\hspace{12pt} 士\hspace{12pt} 学\hspace{12pt} 位\hspace{12pt} 论\hspace{12pt} 文}
-\def\NJUST@label@titleLab{（题名和副题名）}
-\def\NJUST@label@authorLab{（作者姓名）}
+%% Cover -- inner cover (封二, 附件2.2)
+\def\NJUST@label@incoverauthor{作\NJUSTspace 者：}
+\def\NJUST@label@incoveradvisor{指导教师：}
 
-%% Cover advisor fields
-\def\NJUST@label@advisor{指导教师姓名}
-\def\NJUST@label@coadvisor{ }
-\def\NJUST@label@degree  {学\hspace{6pt} 位\hspace{6pt} 类\hspace{6pt} 别}
-\def\NJUST@label@major   {学\hspace{6pt} 科\hspace{6pt} 名\hspace{6pt} 称}
-\def\NJUST@label@interest{研\hspace{6pt} 究\hspace{6pt} 方\hspace{6pt} 向}
-\def\NJUST@label@submitdate{论文提交时间}
-
-%% Incover
-\def\NJUST@label@incoverauthor{作\NJUSTspace 者:}
-\def\NJUST@label@incoveradvisor{指导教师:}
-\def\NJUST@label@incovercoadvisor{    }
-
-%% English cover
-\def\NJUST@label@englishdegree{Ph.D.~}
+%% English cover (英文封二, 附件2.3)
 \def\NJUST@label@englishauthor{By}
 \def\NJUST@label@englishadvisor{Supervised by Prof.~}
-\def\NJUST@label@englishcoadvisor{    }
 
-%% Statement
-\def\NJUST@label@statement{声\hspace{15pt}明}
+%% Statement (附件2.4)
+\def\NJUST@label@statement{声\NJUSTspace 明}
 \def\NJUST@label@accredit{学位论文使用授权声明}
-\def\NJUST@label@authorsign{研究生签名：\NJUSTunderline[3cm]{}}
-\def\NJUST@label@signdate{\hspace{0.9cm} 年\hspace{0.9cm} 月\hspace{0.9cm} 日}
+\def\NJUST@label@authorsign{作者签名：}
+\def\NJUST@label@signdate{年\hspace{2em}月\hspace{2em}日}
 
 %% ========================================
-%%  Default values (user overrides via commands below)
+%%  Default values
 %% ========================================
 
-%% Header
-\def\NJUST@value@classification{}
-\def\NJUST@value@UDC{}
-\def\NJUST@value@UDCfootnote{注1: 注明《国际十进分类法 UDC》的类号}
-\def\NJUST@value@confidential{（无）}
-
-%% Title & author
-\def\NJUST@value@incoverthesis{博\hspace{6pt} 士\hspace{6pt} 学\hspace{6pt} 位\hspace{6pt} 论\hspace{6pt} 文}
-\def\NJUST@value@pageDegree{博士学位论文}
+%% Cover
 \def\NJUST@value@title{（论文题目）}
-\def\NJUST@value@titleUpp{（论文题目）}
-\def\NJUST@value@titleLow{}
-\def\NJUST@value@author{（作者姓名）}
+\def\NJUST@value@titleUpp{（论文题目第一行）}
+\def\NJUST@value@titleLow{（论文题目第二行）}
+\def\NJUST@value@author{（学生姓名）}
+\def\NJUST@value@studentid{（学号）}
+\def\NJUST@value@advisor{（导师姓名）}
+\def\NJUST@value@advisortitle{（教授）}
+\def\NJUST@value@college{（学院名称）}
+\def\NJUST@value@major{（专业名称）}
+\def\NJUST@value@researchdir{（研究方向）}
+\def\NJUST@value@school{南京理工大学}
+\def\NJUST@value@submitdate{年\NJUSTspace 月}
+\def\NJUST@value@pageDegree{毕业设计（论文）报告}
 \def\NJUST@value@titlemark{\NJUST@value@title}
 
-%% Advisor
-\def\NJUST@value@advisor{（导师姓名）}
-\def\NJUST@value@advisortitle{（专业技术职务）}
-\def\NJUST@value@coadvisor{（协同导师姓名）}
-\def\NJUST@value@coadvisortitle{（专业技术职务）}
-\def\NJUST@value@degree{（XX学位）}
-\def\NJUST@value@major{（XX工程）}
-\def\NJUST@value@interest{（XX方向）}
-\def\NJUST@value@school{南京理工大学}
-\def\NJUST@value@submitdate{yyyy.mm}
-\def\NJUST@value@incoverdate{（yyyy年mm月dd日）}
+%% Inner cover (封二)
+\def\NJUST@value@incoverdate{2026年6月}
 
-%% Spine
-\def\NJUST@value@titleBackbone{论\protect\\文\protect\\题\protect\\目}
-\def\NJUST@value@schoolBackbone{学\\校\\名\\称}
-
-%% English
-\def\NJUST@value@englishdegree{(Ph.D.)}
-\def\NJUST@value@englishtitle{(English Title of Thesis)}
+%% English cover
+\def\NJUST@value@englishtitle{(English Title)}
 \def\NJUST@value@englishauthor{(Author Name)}
-\def\NJUST@value@englishadvisor{(Supervisor's Name)}
-\def\NJUST@value@englishadvisortitle{(Professor)}
-\def\NJUST@value@englishcoadvisor{(Co-supervisor's Name)}
-\def\NJUST@value@englishcoadvisortitle{(Lecturer)}
-\def\NJUST@value@englishmajor{(Aerospace Engineering)}
-\def\NJUST@value@englishinstitute{(Nanjing University of Science \& Technology)}
-\def\NJUST@value@englishdate{
-  \ifcase\month
-  \or January\or February\or March\or April
-  \or May\or June\or July\or August\or September
-  \or October\or November\or December
-  \fi, \number\year}
+\def\NJUST@value@englishadvisor{(Supervisor Name)}
+\def\NJUST@value@englishinstitute{Nanjing University of Science \& Technology}
+\def\NJUST@value@englishdate{June, 2026}
 
-%% Statements
-\def\NJUST@value@statement{本学位论文是我在导师的指导下取得的研究成果，尽我所知，在本学位论文中，除了加以标注和致谢的部分外，不包含其他人已经发表或公布过的研究成果，也不包含我为获得任何教育机构的学位或学历而使用过的材料。与我一同工作的同事对本学位论文做出的贡献均已在论文中作了明确的说明。}
-\def\NJUST@value@accredit{南京理工大学有权保存本学位论文的电子和纸质文档，可以借阅或上网公布本学位论文的部分或全部内容，可以向有关部门或机构送交并授权其保存、借阅或上网公布本学位论文的部分或全部内容。对于保密论文，按保密的有关规定和程序处理。}
+%% Statements (official 2026 text -- DO NOT MODIFY)
+\def\NJUST@value@statement{本人郑重声明：所呈交的毕业设计（论文）报告是本人在指导教师指导下独立进行研究工作所取得的成果。除文中已经注明引用的内容外，本报告不包含任何其他个人或集体已经发表或撰写过的作品成果。对本文的研究做出重要贡献的个人和集体，均已在文中以明确方式标明。本人完全意识到本声明的法律结果由本人承担。}
+\def\NJUST@value@accredit{本人完全了解南京理工大学有关保留、使用毕业设计（论文）报告的规定，同意学校保留并向国家有关部门或机构送交报告的复印件和电子版，允许报告被查阅和借阅。本人授权南京理工大学可以将本报告的全部或部分内容编入有关数据库进行检索，可以采用影印、缩印或扫描等复制手段保存和汇编本报告。}
 
 %% ========================================
 %%  User configuration commands
 %% ========================================
 
-%% Header
-\newcommand\classification[1]{\def\NJUST@value@classification{#1}}
-\newcommand\UDC[1]{\def\NJUST@value@UDC{#1}}
-\newcommand\UDCfootnote[1]{\def\NJUST@value@UDCfootnote{#1}}
-\newcommand\confidential[1]{\def\NJUST@value@confidential{#1}}
-
-%% Title & author
-\newcommand\incoverthesis[1]{\def\NJUST@value@incoverthesis{#1}}
+%% Title
 \renewcommand\title[2][\NJUST@value@title]{%
   \def\NJUST@value@title{#2}%
-  \def\NJUST@value@titlemark{\MakeUppercase{#1}}}
-\renewcommand\author[1]{\def\NJUST@value@author{#1}}
+  \def\NJUST@value@titlemark{#1}}
 \newcommand\titleUpp[1]{\def\NJUST@value@titleUpp{#1}}
 \newcommand\titleLow[1]{\def\NJUST@value@titleLow{#1}}
+
+%% Author
+\renewcommand\author[1]{\def\NJUST@value@author{#1}}
+\newcommand\studentid[1]{\def\NJUST@value@studentid{#1}}
 
 %% Advisor
 \newcommand\advisor[1]{\def\NJUST@value@advisor{#1}}
 \newcommand\advisortitle[1]{\def\NJUST@value@advisortitle{#1}}
-\newcommand\coadvisor[1]{\def\NJUST@value@coadvisor{#1}}
-\newcommand\coadvisortitle[1]{\def\NJUST@value@coadvisortitle{#1}}
-\newcommand\degree[1]{\def\NJUST@value@degree{#1}}
-\newcommand\major[1]{\def\NJUST@value@major{#1}}
-\newcommand\interest[1]{\def\NJUST@value@interest{#1}}
 
-%% Dates & school
+%% Degree info
+\newcommand\college[1]{\def\NJUST@value@college{#1}}
+\newcommand\major[1]{\def\NJUST@value@major{#1}}
+\newcommand\researchdir[1]{\def\NJUST@value@researchdir{#1}}
+
+%% School & dates
 \newcommand\school[1]{\def\NJUST@value@school{#1}}
 \newcommand\submitdate[1]{\def\NJUST@value@submitdate{#1}}
 \newcommand\incoverdate[1]{\def\NJUST@value@incoverdate{#1}}
 
-%% Spine
-\newcommand\titleBackbone[1]{\def\NJUST@value@titleBackbone{#1}}
-\newcommand\schoolBackbone[1]{\def\NJUST@value@schoolBackbone{#1}}
+%% Page header degree text
+\newcommand\pageDegree[1]{\def\NJUST@value@pageDegree{#1}}
 
 %% English
 \newcommand\englishtitle[1]{\def\NJUST@value@englishtitle{#1}}
 \newcommand\englishauthor[1]{\def\NJUST@value@englishauthor{#1}}
 \newcommand\englishadvisor[1]{\def\NJUST@value@englishadvisor{#1}}
-\newcommand\englishadvisortitle[1]{\def\NJUST@value@englishadvisortitle{#1}}
-\newcommand\englishcoadvisor[1]{\def\NJUST@value@englishcoadvisor{#1}}
-\newcommand\englishcoadvisortitle[1]{\def\NJUST@value@englishcoadvisortitle{#1}}
-\newcommand\englishdegree[1]{\def\NJUST@value@englishdegree{#1}}
-\newcommand\englishmajor[1]{\def\NJUST@value@englishmajor{#1}}
 \newcommand\englishinstitute[1]{\def\NJUST@value@englishinstitute{#1}}
 \newcommand\englishdate[1]{\def\NJUST@value@englishdate{#1}}
 
 %% Statements
-\newcommand\statement[1]{\def\NJUST@value@statement{#1}}
-\newcommand\accredit[1]{\def\NJUST@value@accredit{#1}}
+\newcommand\statementtext[1]{\def\NJUST@value@statement{#1}}
+\newcommand\accredittext[1]{\def\NJUST@value@accredit{#1}}
 \newcommand\signdate[1]{\def\NJUST@label@signdate{#1}}
 
 %% ========================================
 %%  Utility macros
 %% ========================================
 
-%% Spacing used in vertical CJK headings
 \newcommand\NJUSTspace{\protect\hspace{1em}\protect\hspace{1em}}
 
-%% Underline helper
 \def\NJUST@underline[#1]#2{\underline{\hbox to #1{\hfill#2\hfill}}}
 \def\NJUSTunderline{\@ifnextchar[\NJUST@underline\underline}
 
-%% Redefine \cleardoublepage for oneside+twoside compat
 \def\cleardoublepage{
   \clearpage
   \if@twoside
@@ -238,7 +192,6 @@
     \fi
   \fi}
 
-%% \Nchapter: chapterify environments that appear in front/backmatter
 \newcommand\Nchapter[1]{
     \if@mainmatter
         \@mainmatterfalse
@@ -250,23 +203,6 @@
 }
 
 %% ========================================
-%%  Theorem-like environments
-%% ========================================
-\theoremstyle{plain}
-\newtheorem{algo}{算法\ }[chapter]
-\newtheorem{thm}{定理\ }[chapter]
-\newtheorem{lem}[thm]{引理\ }
-\newtheorem{prop}[thm]{命题\ }
-\newtheorem{cor}[thm]{推论\ }
-\theoremstyle{definition}
-\newtheorem{defn}{定义\ }[chapter]
-\newtheorem{conj}{猜想\ }[chapter]
-\newtheorem{exmp}{例\ }[chapter]
-\newtheorem{rem}{注\ }
-\newtheorem{case}{情形\ }
-\renewcommand{\proofname}{\bf 证明}
-
-%% ========================================
 %%  Content environments
 %% ========================================
 
@@ -276,8 +212,7 @@
   \Nchapter{\NJUST@label@abstract}
 }{}
 
-%% Chinese keywords
-\newcommand\keywords[1]{\vspace{2ex}\noindent{\songbf\zihao{4}\NJUST@label@keywords}#1}
+\newcommand\keywords[1]{\vspace{2ex}\noindent{\songbf\zihao{4}\NJUST@label@keywords}\songti\zihao{-4}#1}
 
 %% English abstract
 \newenvironment{englishabstract}{
@@ -285,7 +220,6 @@
   \Nchapter{\NJUST@label@englishabstract}
 }{}
 
-%% English keywords
 \newcommand\englishkeywords[1]{\vspace{2ex}\noindent{\rmbf\zihao{4}\NJUST@label@englishkeywords}#1}
 
 %% Abbreviations
@@ -305,7 +239,7 @@
 \newcommand\notation[2]{%
   \noindent\makebox[0.25\textwidth][l]{#1}{#2}\par}
 
-%% Publications
+%% Publications / Appendix
 \newenvironment{publications}{
   \ctexset{chapter={format+={\centering\zihao{3}}}}
   \Nchapter{\NJUST@label@publications}
@@ -325,11 +259,6 @@
 %% ========================================
 %%  Bibliography resources (defaults)
 %% ========================================
-\addbibresource{ref/ch1.bib}
-\addbibresource{ref/ch2.bib}
-\addbibresource{ref/ch3.bib}
-\addbibresource{ref/ch4.bib}
-\addbibresource{ref/ch5.bib}
-\addbibresource{ref/ch6.bib}
+\addbibresource{ref/ref.bib}
 
 \endinput

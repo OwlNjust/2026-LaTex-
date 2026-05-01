@@ -1,8 +1,8 @@
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
-\ProvidesClass{njusttt}[2026/05/01 v1.0 NJUST thesis template]
+\ProvidesClass{njusttt}[2026/05/01 v1.0 NJUST undergraduate thesis template]
 
 %% ========================================
-%%  Class options (declared HERE so option processing works)
+%%  Class options
 %% ========================================
 \newif\ifNJUST@print \NJUST@printfalse
 \DeclareOption{print}{\NJUST@printtrue}
@@ -23,22 +23,24 @@
 %% ========================================
 %%  Base class
 %% ========================================
-\LoadClass[a4paper,zihao=-4,UTF8,fontset=none]{ctexbook}
+\LoadClass[a4paper,zihao=-4,UTF8,fontset=none,openright]{ctexbook}
+
+%% ========================================
+%%  Page geometry (2026 undergraduate spec)
+%% ========================================
+\RequirePackage[paper=a4paper,
+  top=30mm,bottom=24mm,left=25mm,right=25mm,
+  headheight=14pt,headsep=6mm,
+  footskip=10mm]{geometry}
 
 %% ========================================
 %%  Required packages
 %% ========================================
-\RequirePackage[
-  textwidth=16truecm,textheight=24truecm,
-  headheight=15pt,footskip=32pt,
-  centering]{geometry}
-
 \RequirePackage{fancyhdr}
 \RequirePackage{mathtools,amsthm,amsfonts,amssymb,bm}
 \RequirePackage{graphicx,flafter}
 \RequirePackage[margin=10.5pt,font=small]{caption}
 \RequirePackage[section]{placeins}
-\RequirePackage{overpic}
 
 %% Math
 \RequirePackage{amsmath,amssymb,amstext}
@@ -95,7 +97,7 @@
 \setcounter{secnumdepth}{3}
 
 %% ========================================
-%%  Load definitions (labels, defaults, user commands, fonts)
+%%  Load definitions
 %% ========================================
 \InputIfFileExists{njusttt.def}{}{
   \ClassError{njusttt}{njusttt.def not found}{Place njusttt.def next to njusttt.cls}
@@ -133,136 +135,100 @@
 ]{Times New Roman}
 \xeCJKsetup{CJKecglue={\hskip 0pt plus 0.08\baselineskip}}
 
+%% Fixed 20pt line spacing for body text (2026 spec)
+\RequirePackage{setspace}
+\setstretch{1.0}
+\renewcommand{\baselinestretch}{1.667}
+
 %% ========================================
 %%  Headers and footers
 %% ========================================
-\newcommand\pageDegree[1]{\def\NJUST@value@pageDegree{#1}}
-
-%% Page number style: Roman for frontmatter
 \renewcommand\frontmatter{\pagenumbering{Roman}}
 
-%% Page style: plain (chapter start pages)
 \fancypagestyle{plain}{
   \fancyhf{}
-  \fancyhead[LO]{\songti\zihao{-5}\NJUST@value@pageDegree}
-  \fancyhead[RO]{\songti\zihao{-5}\NJUST@value@titlemark}
+  \fancyhead[RO]{\songti\zihao{-5}\NJUST@value@pageDegree}
   \fancyhead[LE]{\songti\zihao{-5}\leftmark}
-  \fancyhead[RE]{\songti\zihao{-5}\NJUST@value@pageDegree}
   \fancyfoot[RO,LE]{\zihao{-5}~\thepage~}
 }
 
-%% Page style: fancy (normal pages)
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[LO]{\songti\zihao{-5}\NJUST@value@pageDegree}
-\fancyhead[RO]{\songti\zihao{-5}\NJUST@value@titlemark}
+\fancyhead[RO]{\songti\zihao{-5}\NJUST@value@pageDegree}
 \fancyhead[LE]{\songti\zihao{-5}\leftmark}
-\fancyhead[RE]{\songti\zihao{-5}\NJUST@value@pageDegree}
 \fancyfoot[RO,LE]{\zihao{-5}~\thepage~}
 
 %% ========================================
-%%  Cover generation
+%%  Cover generation -- Front cover (附件2.1)
 %% ========================================
 \newcommand\makefrontcover{
   \cleardoublepage
   \thispagestyle{empty}
   \begin{center}
-    %% Header
-    \songti\zihao{5}
-    \hspace{27.6pt}
-    \NJUST@label@classification~
-    \NJUSTunderline[100pt]{\NJUST@value@classification}
-    \hfill
-    \NJUST@label@confidential~
-    \NJUSTunderline[100pt]{\NJUST@value@confidential}
-    \hspace{27.6pt}
-    \vskip 10pt
-    \hspace{27.6pt}
-    \NJUST@label@UDC~
-    \NJUSTunderline[96pt]{\NJUST@value@UDC}
-    \hfill
-    \NJUSTunderline[0pt]{}
-    \vskip 10pt
+    %% Report title
+    {\songbf\fontsize{26pt}{32pt}\selectfont\NJUST@label@report}
+    \vskip 24pt
 
-    %% Logo
-    \parbox[c][4cm][c]{\textwidth}{
-      \centering
-      \includegraphics[width=12.5cm]{fig/logo/njust.eps}
-    }
+    %% Paper title (two lines)
+    {\heibf\fontsize{22pt}{28pt}\selectfont\NJUST@value@titleUpp}
+    \vskip 12pt
+    {\heibf\fontsize{22pt}{28pt}\selectfont\NJUST@value@titleLow}
 
-    %% Title & author
-    \vskip 10pt
-    \newcommand{\zihaopt}{\fontsize{32pt}{\baselineskip}\selectfont}
-    {\kaibf\zihaopt\NJUST@label@thesis}
-    \vskip \stretch{2}
-    {\vskip 10pt
-      \heibf\zihao{-1}\NJUSTunderline[400pt]{~\NJUST@value@titleUpp~}
-      \vskip 10pt
-      \NJUSTunderline[400pt]{~\NJUST@value@titleLow~}} \\
-    \songti\zihao{-4}{\NJUST@label@titleLab}
-    \vskip \stretch{2}
-    {\kaibf\zihao{-2}\NJUSTunderline[180pt]{~\NJUST@value@author~}} \\
-    \songti\zihao{-4}{\NJUST@label@authorLab}
-    \vskip \stretch{2}
-    \def\tabcolsep{1pt}
-    \def\arraystretch{1.25}
-    \begin{tabular}{cc}
-      \songbf\zihao{4}\NJUST@label@advisor    & \NJUSTunderline[299pt]{{\kaibf\zihao{3}\NJUST@value@advisor}\hspace{4pt}{\kaibf\zihao{4}\NJUST@value@advisortitle}}     \\
-      \songbf\zihao{4}\NJUST@label@coadvisor  & \NJUSTunderline[299pt]{{\kaibf\zihao{3}\NJUST@value@coadvisor}\hspace{4pt}{\kaibf\zihao{4}\NJUST@value@coadvisortitle}} \\
-      \songbf\zihao{4}\NJUST@label@degree     & \NJUSTunderline[299pt]{\kaibf\zihao{3}\NJUST@value@degree}                                                                \\
-      \songbf\zihao{4}\NJUST@label@major      & \NJUSTunderline[299pt]{\kaibf\zihao{3}\NJUST@value@major}                                                                 \\
-      \songbf\zihao{4}\NJUST@label@interest   & \NJUSTunderline[299pt]{\kaibf\zihao{3}\NJUST@value@interest}                                                              \\
-      \songbf\zihao{4}\NJUST@label@submitdate & \NJUSTunderline[299pt]{\kaibf\zihao{3}\NJUST@value@submitdate}
+    \vfill
+
+    %% Student info
+    \def\tabcolsep{0pt}
+    \def\arraystretch{1.5}
+    \begin{tabular}{rl}
+      {\songbf\zihao{4}\NJUST@label@studentname} &
+        \NJUSTunderline[180pt]{\songbf\zihao{4}\NJUST@value@author} \\[12pt]
+      {\songbf\zihao{4}\NJUST@label@studentid} &
+        \NJUSTunderline[180pt]{\songbf\zihao{4}\NJUST@value@studentid} \\[12pt]
+      {\songbf\zihao{4}\NJUST@label@advisor} &
+        \NJUSTunderline[180pt]{{\songbf\zihao{4}\NJUST@value@advisor}\hspace{6pt}{\songti\zihao{4}\NJUST@value@advisortitle}} \\[12pt]
+      {\songbf\zihao{4}\NJUST@label@college} &
+        \NJUSTunderline[180pt]{\songbf\zihao{4}\NJUST@value@college} \\[12pt]
+      {\songbf\zihao{4}\NJUST@label@major} &
+        \NJUSTunderline[180pt]{\songbf\zihao{4}\NJUST@value@major} \\[12pt]
+      {\songbf\zihao{4}\NJUST@label@researchdir} &
+        \NJUSTunderline[180pt]{\songbf\zihao{4}\NJUST@value@researchdir} \\[12pt]
+      {\songbf\zihao{4}\NJUST@label@submitdate} &
+        \NJUSTunderline[180pt]{\songbf\zihao{4}\NJUST@value@submitdate}
     \end{tabular}
   \end{center}
 
-  %% Footnote
-  \vspace{2em}
-  {\songti\zihao{5}\NJUST@value@UDCfootnote}
-
-  %% Reset to default font
   \songti
 }
 
-\newcommand\makebackbone{
-  \clearpage
-  \if@twoside
-    \thispagestyle{empty}
-    \begin{center}
-      \kaibf\zihao{-4}{\NJUST@value@titleBackbone}
-      \vskip \stretch{8}
-      \vfill
-      \kaibf\zihao{-4}{\NJUST@value@schoolBackbone}
-    \end{center}
-    \ifNJUST@print\else
-      \vspace*{\stretch{1}}
-      \begin{footnotesize}
-        \noindent
-      \end{footnotesize}
-    \fi
-    \cleardoublepage
-  \fi
-}
-
+%% ========================================
+%%  Cover generation -- Inner cover / 封二 (附件2.2)
+%% ========================================
 \newcommand\makeincover{
   \cleardoublepage
   \thispagestyle{empty}
   \begin{center}
-    \weibei\zihao{-2}\NJUST@value@incoverthesis
-    \\[2cm]
-    \heibf\zihao{2}\NJUST@value@title
-    \\[3cm]
-    \begin{tabular}{rl}
-      \kaibf\zihao{-2}\NJUST@label@incoverauthor  & \kaibf\zihao{-2}\NJUST@value@author
-      \\[25pt]
-      \kaibf\zihao{-2}\NJUST@label@incoveradvisor & {\kaibf\zihao{-2}\NJUST@value@advisor\hspace{4pt}}{\kaibf\zihao{3}\NJUST@value@advisortitle}
-      \\
-      \kaibf\zihao{-2}\NJUST@label@incovercoadvisor & {\kaibf\zihao{-2}\NJUST@value@coadvisor\hspace{4pt}}{\kaibf\zihao{3}\NJUST@value@coadvisortitle}
-    \end{tabular}
-    \vskip \stretch{2}
-    \songbf\zihao{-2}\NJUST@value@school
+    \vspace*{40pt}
+
+    %% Paper title
+    {\heibf\fontsize{22pt}{28pt}\selectfont\NJUST@value@titleUpp}
     \vskip 8pt
-    \songbf\zihao{-2}\NJUST@value@incoverdate
+    {\heibf\fontsize{22pt}{28pt}\selectfont\NJUST@value@titleLow}
+
+    \vskip 60pt
+
+    %% Author & supervisor
+    {\songbf\fontsize{18pt}{24pt}\selectfont
+      \NJUST@label@incoverauthor\NJUST@value@author}
+    \vskip 24pt
+    {\songbf\fontsize{18pt}{24pt}\selectfont
+      \NJUST@label@incoveradvisor\NJUST@value@advisor\NJUST@value@advisortitle}
+
+    \vfill
+
+    %% School & date
+    {\songbf\fontsize{18pt}{24pt}\selectfont\NJUST@value@school}
+    \vskip 12pt
+    {\songbf\fontsize{18pt}{24pt}\selectfont\NJUST@value@incoverdate}
   \end{center}
   \clearpage
   \if@twoside
@@ -271,27 +237,36 @@
   \fi
 }
 
+%% ========================================
+%%  Cover generation -- English inner cover (英文封二, 附件2.3)
+%% ========================================
 \newcommand\makeenglishincover{
   \cleardoublepage
   \thispagestyle{empty}
   \begin{center}
-    \vspace*{-18pt}
-    \rmn\zihao{-2}\NJUST@label@englishdegree\NJUST@value@englishdegree
+    \vspace*{40pt}
+
+    %% English title
+    {\rmbf\fontsize{22pt}{28pt}\selectfont\NJUST@value@englishtitle}
+
     \vskip 60pt
-    \rmbf\zihao{2}\NJUST@value@englishtitle
-    \vskip 30pt
-    \rmit\zihao{-2}\NJUST@label@englishauthor
-    \\
-    \rmbfit\zihao{-2}\NJUST@value@englishauthor
-    \vskip 60pt
-    \begin{tabular}{rl}
-      \rmit\zihao{-2}\NJUST@label@englishadvisor   & \rmbfit\zihao{-2}\NJUST@value@englishadvisor   \\
-      \rmit\zihao{-2}\NJUST@label@englishcoadvisor & \rmbfit\zihao{-2}\NJUST@value@englishcoadvisor
-    \end{tabular}
-    \vskip \stretch{2}
-    \rmn\zihao{-2}\NJUST@value@englishinstitute
+
+    %% Author
+    {\rmit\fontsize{18pt}{24pt}\selectfont\NJUST@label@englishauthor}
+    \vskip 8pt
+    {\rmbfit\fontsize{18pt}{24pt}\selectfont\NJUST@value@englishauthor}
+
+    \vskip 36pt
+
+    %% Supervisor
+    {\rmit\fontsize{18pt}{24pt}\selectfont\NJUST@label@englishadvisor\NJUST@value@englishadvisor}
+
+    \vfill
+
+    %% Institute & date
+    {\rmn\fontsize{18pt}{24pt}\selectfont\NJUST@value@englishinstitute}
     \vskip 12pt
-    \rmn\zihao{-2}\NJUST@value@englishdate
+    {\rmn\fontsize{18pt}{24pt}\selectfont\NJUST@value@englishdate}
   \end{center}
   \clearpage
   \if@twoside
@@ -300,23 +275,26 @@
   \fi
 }
 
+%% ========================================
+%%  Cover generation -- Statement (附件2.4)
+%% ========================================
 \newcommand\makestatement{
   \cleardoublepage
   \thispagestyle{empty}
   \begin{center}
     \vspace*{12pt}
     \parbox{\textwidth}{\centering\bf\songbf\zihao{3}\NJUST@label@statement}
-    \vskip 1.6cm
-    \parbox{\textwidth}{\songti\zihao{4}\renewcommand{\baselinestretch}{1.6}\hspace{2em}\zihao{4}\NJUST@value@statement}
-    \vskip 1.8cm
-    \parbox{\textwidth}{\noindent{}\zihao{4}\NJUST@label@authorsign\hspace{3.5cm}\NJUST@label@signdate}
-    \vskip 4.45cm
+    \vskip 24pt
+    \parbox{\textwidth}{\songti\zihao{4}\renewcommand{\baselinestretch}{1.6}\hspace{2em}\NJUST@value@statement}
+    \vskip 24pt
+    \parbox{\textwidth}{\noindent\zihao{4}\NJUST@label@authorsign\hspace{3.5cm}\NJUST@label@signdate}
+    \vskip 48pt
 
     \parbox{\textwidth}{\centering\bf\songbf\zihao{3}\NJUST@label@accredit}
-    \vskip 1.6cm
-    \parbox{\textwidth}{\songti\zihao{4}\renewcommand{\baselinestretch}{1.6}\hspace{2em}\zihao{4}\NJUST@value@accredit}
-    \vskip 1.8cm
-    \parbox{\textwidth}{\noindent{}\zihao{4}\NJUST@label@authorsign\hspace{3.5cm}\NJUST@label@signdate}
+    \vskip 24pt
+    \parbox{\textwidth}{\songti\zihao{4}\renewcommand{\baselinestretch}{1.6}\hspace{2em}\NJUST@value@accredit}
+    \vskip 24pt
+    \parbox{\textwidth}{\noindent\zihao{4}\NJUST@label@authorsign\hspace{3.5cm}\NJUST@label@signdate}
   \end{center}
   \clearpage
   \if@twoside
@@ -325,9 +303,11 @@
   \fi
 }
 
+%% ========================================
+%%  Convenience wrapper
+%% ========================================
 \newcommand\makecover{
   \makefrontcover
-  \makebackbone
   \makeincover
   \makeenglishincover
   \makestatement
@@ -348,7 +328,7 @@
     \advance\leftskip\@tempdima
     \hskip -\leftskip
     #1\nobreak
-    \leaders\hbox{$\m@th\mkern 2mu\bm{\bm\cdot}\mkern 5mu$}
+    \leaders\hbox{$\m@th\mkern 2mu\bm{\cdot}\mkern 5mu$}
     \hfil \nobreak\hb@xt@\@pnumwidth{\hss #2}\par
     \penalty\@highpenalty
     \endgroup
@@ -399,13 +379,14 @@
 }
 
 %% ========================================
-%%  Chapter and section styles
+%%  Chapter and section styles (2026 spec)
+%%  一级: 小三(15pt) bold, 二级: 四号(14pt) bold, 三级: 小四(12pt) bold
 %% ========================================
 \ctexset{
   chapter={
     format={\songbf\zihao{-3}},
     name={,},number={\arabic{chapter}},
-    beforeskip={0pt},afterskip={18pt}
+    beforeskip={18pt},afterskip={18pt}
   },
   section={
     format={\songbf\zihao{4}},
@@ -423,12 +404,17 @@
 }
 
 %% ========================================
-%%  Helper commands for user convenience
+%%  Figure and table captions (五号 10.5pt per 2026 spec)
+%% ========================================
+\captionsetup[figure]{font={songti,zihao{5}}}
+\captionsetup[table]{font={songti,zihao{5}}}
+
+%% ========================================
+%%  Helper commands
 %% ========================================
 \newcommand{\dw}[2]{~\SI{#1}{#2}}
 \newcommand{\td}[0]{~\~{}~}
 
-%% Bibliography print command
 \newcommand\NJUSTprintbib{
   \cleardoublepage
   \phantomsection
