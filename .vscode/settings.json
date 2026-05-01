@@ -1,6 +1,16 @@
 {
     "latex-workshop.latex.tools": [
         {
+            "name": "xelatex",
+            "command": "xelatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOCFILE%"
+            ]
+        },
+        {
             "name": "biber",
             "command": "biber",
             "args": [
@@ -10,7 +20,7 @@
     ],
     "latex-workshop.latex.recipes": [
         {
-            "name": "xelatex → biber → xelatex → xelatex",
+            "name": "xelatex → biber → xelatex × 2",
             "tools": [
                 "xelatex",
                 "biber",
@@ -18,5 +28,6 @@
                 "xelatex"
             ]
         }
-    ]
+    ],
+    "latex-workshop.latex.recipe.default": "lastUsed"
 }
