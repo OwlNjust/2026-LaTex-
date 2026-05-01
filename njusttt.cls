@@ -201,17 +201,17 @@
     \vskip 36pt
 
     %% Bottom info table (左侧标签分散对齐，右侧填空等宽下划线)
-    \begin{tabular}{@{} p{3.8cm} @{\hspace{0.3cm}} p{9cm} @{}}
-      \makebox[3.8cm][s]{\songbf\zihao{4} 指\hspace{0.3em}导\hspace{0.3em}教\hspace{0.3em}师} &
-        \underline{\makebox[9cm][c]{\kaishu\zihao{4}\NJUST@value@advisor\quad\NJUST@value@advisortitle}} \\[2pt]
-      \makebox[3.8cm][s]{\songbf\zihao{4} 学\hspace{0.3em}生\hspace{0.3em}学\hspace{0.3em}院} &
-        \underline{\makebox[9cm][c]{\kaishu\zihao{4}\NJUST@value@college}} \\[2pt]
-      \makebox[3.8cm][s]{\songbf\zihao{4} 专\hspace{2.9em}业} &
-        \underline{\makebox[9cm][c]{\kaishu\zihao{4}\NJUST@value@major}} \\[2pt]
-      \makebox[3.8cm][s]{\songbf\zihao{4} 研\hspace{0.3em}究\hspace{0.3em}方\hspace{0.3em}向} &
-        \underline{\makebox[9cm][c]{\kaishu\zihao{4}\NJUST@value@researchdir}} \\[2pt]
-      \makebox[3.8cm][s]{\songbf\zihao{4} 提\hspace{0.3em}交\hspace{0.3em}时\hspace{0.3em}间} &
-        \underline{\makebox[9cm][c]{\kaishu\zihao{4}\NJUST@value@submitdate}}
+    \begin{tabular}{@{} p{3cm} @{\hspace{0cm}} p{8cm} @{}}
+      \makebox[3cm][s]{\songbf\zihao{4} 指\hspace{0.3em}导\hspace{0.3em}教\hspace{0.3em}师} &
+        \underline{\makebox[8cm][c]{\kaishu\zihao{4}\NJUST@value@advisor\quad\NJUST@value@advisortitle}} \\[2pt]
+      \makebox[3cm][s]{\songbf\zihao{4} 学\hspace{0.3em}生\hspace{0.3em}学\hspace{0.3em}院} &
+        \underline{\makebox[8cm][c]{\kaishu\zihao{4}\NJUST@value@college}} \\[2pt]
+      \makebox[3cm][s]{\songbf\zihao{4} 专\hspace{2.9em}业} &
+        \underline{\makebox[8cm][c]{\kaishu\zihao{4}\NJUST@value@major}} \\[2pt]
+      \makebox[3cm][s]{\songbf\zihao{4} 研\hspace{0.3em}究\hspace{0.3em}方\hspace{0.3em}向} &
+        \underline{\makebox[8cm][c]{\kaishu\zihao{4}\NJUST@value@researchdir}} \\[2pt]
+      \makebox[3cm][s]{\songbf\zihao{4} 提\hspace{0.3em}交\hspace{0.3em}时\hspace{0.3em}间} &
+        \underline{\makebox[8cm][c]{\kaishu\zihao{4}\NJUST@value@submitdate}}
     \end{tabular}
   \end{center}
   \songti
