@@ -16,11 +16,28 @@
             "args": [
                 "%DOCFILE%"
             ]
+        },
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-xelatex",
+                "%DOCFILE%"
+            ]
         }
     ],
     "latex-workshop.latex.recipes": [
         {
-            "name": "xelatex → biber → xelatex × 2",
+            "name": "latexmk (智能快速编译)",
+            "tools": [
+                "latexmk"
+            ]
+        },
+        {
+            "name": "xelatex → biber → xelatex × 2 (首次/全量编译)",
             "tools": [
                 "xelatex",
                 "biber",

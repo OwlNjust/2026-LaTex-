@@ -184,7 +184,7 @@
       \vskip 20pt
       \underline{\makebox[0.85\textwidth][c]{\NJUST@value@titleLow}}}
 
-    \vskip 36pt
+    \vskip 42pt
 
     %% Author & Student ID (居中，小二楷体加粗)
     \begin{minipage}{0.45\textwidth}
@@ -198,15 +198,15 @@
       {\songti\zihao{5}（学号）}
     \end{minipage}
 
-    \vskip 28pt
+    \vskip 36pt
 
     %% Bottom info table (左侧标签分散对齐，右侧填空等宽下划线)
-    \begin{tabular}{@{} p{3.8cm} p{9cm} @{}}
+    \begin{tabular}{@{} p{3cm} @{\hspace{0cm}} p{9cm} @{}}
       \makebox[3.8cm][s]{\songbf\zihao{4} 指\hspace{0.3em}导\hspace{0.3em}教\hspace{0.3em}师} &
         \underline{\makebox[9cm][c]{\kaishu\zihao{4}\NJUST@value@advisor\quad\NJUST@value@advisortitle}} \\[10pt]
       \makebox[3.8cm][s]{\songbf\zihao{4} 学\hspace{0.3em}生\hspace{0.3em}学\hspace{0.3em}院} &
         \underline{\makebox[9cm][c]{\kaishu\zihao{4}\NJUST@value@college}} \\[10pt]
-      \makebox[3.8cm][s]{\songbf\zihao{4} 专\hspace{0em}业} &
+      \makebox[3.8cm][s]{\songbf\zihao{4} 专\hspace{2.9em}业} &
         \underline{\makebox[9cm][c]{\kaishu\zihao{4}\NJUST@value@major}} \\[10pt]
       \makebox[3.8cm][s]{\songbf\zihao{4} 研\hspace{0.3em}究\hspace{0.3em}方\hspace{0.3em}向} &
         \underline{\makebox[9cm][c]{\kaishu\zihao{4}\NJUST@value@researchdir}} \\[10pt]
