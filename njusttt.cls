@@ -169,45 +169,53 @@
   \cleardoublepage
   \thispagestyle{empty}
   \begin{center}
+
     %% Logo
-    \parbox[c][3cm][c]{\textwidth}{
+    \includegraphics[width=0.7\textwidth]{fig/logo/njust.eps}
+    \vskip 20pt
+
+    %% Report type
+    {\songbf\fontsize{26pt}{32pt}\selectfont 毕\hspace{0.5em}业\hspace{0.5em}设\hspace{0.5em}计（论\hspace{0.5em}文）报\hspace{0.5em}告}
+    \vskip 36pt
+
+    %% Paper title (小一黑体加粗，每行等长下划线)
+    {\heibf\zihao{-1}
+      \underline{\makebox[0.85\textwidth][c]{\NJUST@value@titleUpp}}
+      \vskip 20pt
+      \underline{\makebox[0.85\textwidth][c]{\NJUST@value@titleLow}}}
+
+    \vskip 36pt
+
+    %% Author & Student ID (右对齐，小二楷体加粗)
+    \hfill
+    \begin{minipage}{0.45\textwidth}
       \centering
-      \includegraphics[width=10cm]{fig/logo/njust.eps}
-    }
-    \vskip 12pt
+      {\kaibf\zihao{-2}\underline{\makebox[0.8\linewidth][c]{\NJUST@value@author}}}
+      \par\vskip 2pt
+      {\songti\zihao{5}（学生姓名）}
+      \par\vskip 20pt
+      {\kaibf\zihao{-2}\underline{\makebox[0.8\linewidth][c]{\NJUST@value@studentid}}}
+      \par\vskip 2pt
+      {\songti\zihao{5}（学号）}
+    \end{minipage}
 
-    %% Report title
-    {\songbf\fontsize{26pt}{32pt}\selectfont\NJUST@label@report}
-    \vskip 24pt
+    \vskip 36pt
 
-    %% Paper title (two lines)
-    {\heibf\fontsize{22pt}{28pt}\selectfont\NJUST@value@titleUpp}
-    \vskip 12pt
-    {\heibf\fontsize{22pt}{28pt}\selectfont\NJUST@value@titleLow}
-
-    \vfill
-
-    %% Student info
-    \def\tabcolsep{0pt}
-    \def\arraystretch{1.5}
-    \begin{tabular}{rl}
-      {\songbf\zihao{4}\NJUST@label@studentname} &
-        \NJUSTunderline[180pt]{\songbf\zihao{4}\NJUST@value@author} \\[12pt]
-      {\songbf\zihao{4}\NJUST@label@studentid} &
-        \NJUSTunderline[180pt]{\songbf\zihao{4}\NJUST@value@studentid} \\[12pt]
-      {\songbf\zihao{4}\NJUST@label@advisor} &
-        \NJUSTunderline[180pt]{{\songbf\zihao{4}\NJUST@value@advisor}\hspace{6pt}{\songti\zihao{4}\NJUST@value@advisortitle}} \\[12pt]
-      {\songbf\zihao{4}\NJUST@label@college} &
-        \NJUSTunderline[180pt]{\songbf\zihao{4}\NJUST@value@college} \\[12pt]
-      {\songbf\zihao{4}\NJUST@label@major} &
-        \NJUSTunderline[180pt]{\songbf\zihao{4}\NJUST@value@major} \\[12pt]
-      {\songbf\zihao{4}\NJUST@label@researchdir} &
-        \NJUSTunderline[180pt]{\songbf\zihao{4}\NJUST@value@researchdir} \\[12pt]
-      {\songbf\zihao{4}\NJUST@label@submitdate} &
-        \NJUSTunderline[180pt]{\songbf\zihao{4}\NJUST@value@submitdate}
+    %% Bottom info table (左侧标签分散对齐，右侧填空等宽下划线)
+    \begin{tabular}{@{} p{3.8cm} p{9cm} @{}}
+      \makebox[3.8cm][s]{\songbf\zihao{4} 指\hspace{0.3em}导\hspace{0.3em}教\hspace{0.3em}师} &
+        \underline{\makebox[3cm][c]{\kaishu\zihao{4}\NJUST@value@advisor}}
+        \quad{\kaishu\zihao{4}\NJUST@value@advisortitle} \\[20pt]
+      \makebox[3.8cm][s]{\songbf\zihao{4} 学\hspace{0.3em}生\hspace{0.3em}学\hspace{0.3em}院} &
+        \underline{\makebox[9cm][c]{\kaishu\zihao{4}\NJUST@value@college}} \\[20pt]
+      \makebox[3.8cm][s]{\songbf\zihao{4} 专\hspace{6em}业} &
+        \underline{\makebox[9cm][c]{\kaishu\zihao{4}\NJUST@value@major}} \\[20pt]
+      \makebox[3.8cm][s]{\songbf\zihao{4} 研\hspace{0.3em}究\hspace{0.3em}方\hspace{0.3em}向} &
+        \underline{\makebox[9cm][c]{\kaishu\zihao{4}\NJUST@value@researchdir}} \\[20pt]
+      \makebox[3.8cm][s]{\songbf\zihao{4} 提\hspace{0.3em}交\hspace{0.3em}时\hspace{0.3em}间} &
+        \underline{\makebox[9cm][c]{\kaishu\zihao{4}\NJUST@value@submitdate}}
     \end{tabular}
   \end{center}
-
   \songti
 }
 
@@ -218,28 +226,28 @@
   \cleardoublepage
   \thispagestyle{empty}
   \begin{center}
-    \vspace*{40pt}
+    \vspace*{60pt}
 
-    %% Paper title
-    {\heibf\fontsize{22pt}{28pt}\selectfont\NJUST@value@titleUpp}
+    %% Paper title (小一黑体加粗)
+    {\heibf\zihao{-1}\NJUST@value@titleUpp}
     \vskip 8pt
-    {\heibf\fontsize{22pt}{28pt}\selectfont\NJUST@value@titleLow}
-
-    \vskip 60pt
-
-    %% Author & supervisor
-    {\songbf\fontsize{18pt}{24pt}\selectfont
-      \NJUST@label@incoverauthor\NJUST@value@author}
-    \vskip 24pt
-    {\songbf\fontsize{18pt}{24pt}\selectfont
-      \NJUST@label@incoveradvisor\NJUST@value@advisor\NJUST@value@advisortitle}
+    {\heibf\zihao{-1}\NJUST@value@titleLow}
 
     \vfill
 
-    %% School & date
-    {\songbf\fontsize{18pt}{24pt}\selectfont\NJUST@value@school}
-    \vskip 12pt
-    {\songbf\fontsize{18pt}{24pt}\selectfont\NJUST@value@incoverdate}
+    %% Author & advisor (小二楷体加粗)
+    {\kaibf\zihao{-2}
+      \NJUST@label@incoverauthor\NJUST@value@author}
+    \vskip 30pt
+    {\kaibf\zihao{-2}
+      \NJUST@label@incoveradvisor\NJUST@value@advisor\quad\NJUST@value@advisortitle}
+
+    \vfill
+
+    %% School & date (小二宋体加粗)
+    {\songbf\zihao{-2} 南\hspace{1em}京\hspace{1em}理\hspace{1em}工\hspace{1em}大\hspace{1em}学}
+    \vskip 16pt
+    {\songbf\zihao{-2}\NJUST@value@incoverdate}
   \end{center}
   \clearpage
   \if@twoside
@@ -255,29 +263,29 @@
   \cleardoublepage
   \thispagestyle{empty}
   \begin{center}
-    \vspace*{40pt}
+    \vspace*{60pt}
 
-    %% English title
-    {\rmbf\fontsize{22pt}{28pt}\selectfont\NJUST@value@englishtitle}
+    %% English title (二号 Times New Roman 加粗)
+    {\rmbf\zihao{2}\NJUST@value@englishtitle}
 
-    \vskip 60pt
+    \vfill
 
     %% Author
-    {\rmit\fontsize{18pt}{24pt}\selectfont\NJUST@label@englishauthor}
+    {\rmit\zihao{-2}\NJUST@label@englishauthor}
     \vskip 8pt
-    {\rmbfit\fontsize{18pt}{24pt}\selectfont\NJUST@value@englishauthor}
+    {\rmbfit\zihao{-2}\NJUST@value@englishauthor}
 
-    \vskip 36pt
+    \vskip 40pt
 
     %% Supervisor
-    {\rmit\fontsize{18pt}{24pt}\selectfont\NJUST@label@englishadvisor\NJUST@value@englishadvisor}
+    {\rmit\zihao{-2}\NJUST@label@englishadvisor\NJUST@value@englishadvisor}
 
     \vfill
 
     %% Institute & date
-    {\rmn\fontsize{18pt}{24pt}\selectfont\NJUST@value@englishinstitute}
-    \vskip 12pt
-    {\rmn\fontsize{18pt}{24pt}\selectfont\NJUST@value@englishdate}
+    {\rmn\zihao{-2}\NJUST@value@englishinstitute}
+    \vskip 16pt
+    {\rmn\zihao{-2}\NJUST@value@englishdate}
   \end{center}
   \clearpage
   \if@twoside
@@ -330,7 +338,7 @@
 \renewcommand*\l@chapter[2]{
   \ifnum \c@tocdepth >\m@ne
     \addpenalty{-\@highpenalty}
-    \vskip 0.3em \@plus\p@
+    \vskip 0.1em \@plus\p@
     \setlength\@tempdima{1.5em}
     \begingroup
     \parindent \z@ \rightskip \@pnumwidth
@@ -347,8 +355,8 @@
 }
 \renewcommand*\l@section[2]{
   \ifnum \c@tocdepth >1
-    \vskip 0.15em \@plus\p@
-    \setlength\@tempdima{2.5em}
+    \vskip 0.05em \@plus\p@
+    \setlength\@tempdima{3.5em}
     \begingroup
     \parindent \z@ \rightskip \@pnumwidth
     \parfillskip -\@pnumwidth
@@ -363,8 +371,8 @@
 }
 \renewcommand*\l@subsection[2]{
   \ifnum \c@tocdepth >2
-    \vskip 0.15em \@plus\p@
-    \setlength\@tempdima{4em}
+    \vskip 0.05em \@plus\p@
+    \setlength\@tempdima{5.5em}
     \begingroup
     \parindent \z@ \rightskip \@pnumwidth
     \parfillskip -\@pnumwidth
