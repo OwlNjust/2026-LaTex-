@@ -147,15 +147,19 @@
 
 \fancypagestyle{plain}{
   \fancyhf{}
-  \fancyhead[RO]{\songti\zihao{-5}\NJUST@value@pageDegree}
+  \fancyhead[LO]{\songti\zihao{-5}\NJUST@value@pageDegree}
+  \fancyhead[RO]{\songti\zihao{-5}\NJUST@value@titlemark}
   \fancyhead[LE]{\songti\zihao{-5}\leftmark}
+  \fancyhead[RE]{\songti\zihao{-5}\NJUST@value@pageDegree}
   \fancyfoot[RO,LE]{\zihao{-5}~\thepage~}
 }
 
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[RO]{\songti\zihao{-5}\NJUST@value@pageDegree}
+\fancyhead[LO]{\songti\zihao{-5}\NJUST@value@pageDegree}
+\fancyhead[RO]{\songti\zihao{-5}\NJUST@value@titlemark}
 \fancyhead[LE]{\songti\zihao{-5}\leftmark}
+\fancyhead[RE]{\songti\zihao{-5}\NJUST@value@pageDegree}
 \fancyfoot[RO,LE]{\zihao{-5}~\thepage~}
 
 %% ========================================
@@ -165,6 +169,13 @@
   \cleardoublepage
   \thispagestyle{empty}
   \begin{center}
+    %% Logo
+    \parbox[c][3cm][c]{\textwidth}{
+      \centering
+      \includegraphics[width=10cm]{fig/logo/njust.eps}
+    }
+    \vskip 12pt
+
     %% Report title
     {\songbf\fontsize{26pt}{32pt}\selectfont\NJUST@label@report}
     \vskip 24pt
@@ -334,6 +345,38 @@
     \endgroup
   \fi
 }
+\renewcommand*\l@section[2]{
+  \ifnum \c@tocdepth >1
+    \vskip 0.15em \@plus\p@
+    \setlength\@tempdima{2.5em}
+    \begingroup
+    \parindent \z@ \rightskip \@pnumwidth
+    \parfillskip -\@pnumwidth
+    \leavevmode \songti\zihao{-4}
+    \advance\leftskip\@tempdima
+    \hskip -\leftskip
+    #1\nobreak
+    \leaders\hbox{$\m@th\mkern 1mu\cdot\mkern 3mu$}
+    \hfil \nobreak\hb@xt@\@pnumwidth{\hss #2}\par
+    \endgroup
+  \fi
+}
+\renewcommand*\l@subsection[2]{
+  \ifnum \c@tocdepth >2
+    \vskip 0.15em \@plus\p@
+    \setlength\@tempdima{4em}
+    \begingroup
+    \parindent \z@ \rightskip \@pnumwidth
+    \parfillskip -\@pnumwidth
+    \leavevmode \songti\zihao{-4}
+    \advance\leftskip\@tempdima
+    \hskip -\leftskip
+    #1\nobreak
+    \leaders\hbox{$\m@th\mkern 1mu\cdot\mkern 3mu$}
+    \hfil \nobreak\hb@xt@\@pnumwidth{\hss #2}\par
+    \endgroup
+  \fi
+}
 \renewcommand\tableofcontents{
   \if@twocolumn
     \@restonecoltrue\onecolumn
@@ -384,7 +427,7 @@
 %% ========================================
 \ctexset{
   chapter={
-    format={\songbf\zihao{-3}},
+    format={\songbf\zihao{-3}\raggedright},
     name={,},number={\arabic{chapter}},
     beforeskip={18pt},afterskip={18pt}
   },
