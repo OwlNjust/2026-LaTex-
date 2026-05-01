@@ -201,7 +201,7 @@
     \vskip 36pt
 
     %% Bottom info table (左侧标签分散对齐，右侧填空等宽下划线)
-    \begin{tabular}{@{} p{3cm} @{\hspace{0cm}} p{9cm} @{}}
+    \begin{tabular}{@{} p{3cm} @{\hspace{0cm}} p{8cm} @{}}
       \makebox[3.8cm][s]{\songbf\zihao{4} 指\hspace{0.3em}导\hspace{0.3em}教\hspace{0.3em}师} &
         \underline{\makebox[9cm][c]{\kaishu\zihao{4}\NJUST@value@advisor\quad\NJUST@value@advisortitle}} \\[10pt]
       \makebox[3.8cm][s]{\songbf\zihao{4} 学\hspace{0.3em}生\hspace{0.3em}学\hspace{0.3em}院} &
@@ -336,7 +336,7 @@
 \renewcommand*\l@chapter[2]{
   \ifnum \c@tocdepth >\m@ne
     \addpenalty{-\@highpenalty}
-    \vskip 0.1em \@plus\p@
+    \vskip 0em \@plus\p@
     \setlength\@tempdima{1.5em}
     \begingroup
     \parindent \z@ \rightskip \@pnumwidth
@@ -353,14 +353,15 @@
 }
 \renewcommand*\l@section[2]{
   \ifnum \c@tocdepth >1
-    \vskip 0.05em \@plus\p@
-    \setlength\@tempdima{3.5em}
+    \vskip 0em \@plus\p@
+    \setlength\@tempdima{2.5em}       % 序号到标题文字的间距
     \begingroup
     \parindent \z@ \rightskip \@pnumwidth
     \parfillskip -\@pnumwidth
     \leavevmode \songti\zihao{-4}
     \advance\leftskip\@tempdima
     \hskip -\leftskip
+    \hskip 1.5em                      % ← 序号缩进量（距左边界）
     #1\nobreak
     \leaders\hbox{$\m@th\mkern 1mu\cdot\mkern 3mu$}
     \hfil \nobreak\hb@xt@\@pnumwidth{\hss #2}\par
@@ -369,14 +370,15 @@
 }
 \renewcommand*\l@subsection[2]{
   \ifnum \c@tocdepth >2
-    \vskip 0.05em \@plus\p@
-    \setlength\@tempdima{5.5em}
+    \vskip 0em \@plus\p@
+    \setlength\@tempdima{2.5em}       % 序号到标题文字的间距
     \begingroup
     \parindent \z@ \rightskip \@pnumwidth
     \parfillskip -\@pnumwidth
     \leavevmode \songti\zihao{-4}
     \advance\leftskip\@tempdima
     \hskip -\leftskip
+    \hskip 3em                        % ← 序号缩进量（距左边界，比二级更大）
     #1\nobreak
     \leaders\hbox{$\m@th\mkern 1mu\cdot\mkern 3mu$}
     \hfil \nobreak\hb@xt@\@pnumwidth{\hss #2}\par
