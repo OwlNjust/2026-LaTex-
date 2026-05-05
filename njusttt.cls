@@ -23,7 +23,7 @@
 %% ========================================
 %%  Base class
 %% ========================================
-\LoadClass[a4paper,zihao=-4,UTF8,fontset=none,openright]{ctexbook}
+\LoadClass[a4paper,zihao=-4,UTF8,fontset=none,openany]{ctexbook}
 
 %% ========================================
 %%  Page geometry (2026 undergraduate spec)
