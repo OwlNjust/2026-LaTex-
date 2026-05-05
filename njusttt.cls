@@ -30,8 +30,8 @@
 %% ========================================
 \RequirePackage[paper=a4paper,
   top=30mm,bottom=24mm,left=25mm,right=25mm,
-  headheight=14pt,headsep=6mm,
-  footskip=10mm]{geometry}
+  headheight=14pt,headsep=5mm,
+  footskip=4mm]{geometry}
 
 %% ========================================
 %%  Required packages
