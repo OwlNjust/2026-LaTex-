@@ -61,6 +61,10 @@
   gbpub=false,bibstyle=gb7714-2015,citestyle=gb7714-2015,
   gbnamefmt=lowercase]{biblatex}
 
+%% 参考文献条目：小四号宋体，行距20磅
+\renewcommand*{\bibfont}{\zihao{-4}\songti}
+\setlength{\bibitemsep}{0pt}
+
 %% Tables
 \RequirePackage{booktabs}
 \RequirePackage{multirow}
@@ -176,7 +180,7 @@
     \vskip 20pt
 
     %% Report type
-    {\kaishu\fontsize{32pt}{40pt}\selectfont 毕\hspace{0.5em}业\hspace{0.5em}设\hspace{0.5em}计（论\hspace{0.5em}文）报\hspace{0.5em}告}
+    {\kaishu\fontsize{32pt}{40pt}\selectfont 毕业设计（论文）报告}
     \vskip 36pt
 
     %% Paper title (小一黑体加粗，每行等长下划线)
