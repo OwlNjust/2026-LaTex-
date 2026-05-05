@@ -73,6 +73,10 @@
 \renewcommand\arraystretch{1.3}
 \let\oldtabularx\tabularx
 \renewcommand{\tabularx}{\zihao{5}\oldtabularx}
+
+%% 所有表格环境默认五号宋体（2026 spec）
+\AtBeginEnvironment{tabular}{\zihao{5}\songti}
+\AtBeginEnvironment{tabularx}{\zihao{5}\songti}
 \RequirePackage{xcolor,colortbl}
 \RequirePackage{threeparttable}
 
