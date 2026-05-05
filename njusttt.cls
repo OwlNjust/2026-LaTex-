@@ -481,7 +481,15 @@
 \defbibheading{bibnonbody}{%
   \ctexset{chapter={format+={\centering\zihao{3}}}}%
   \chapter*{#1}%
+  \markboth{#1}{#1}%
   \addcontentsline{toc}{chapter}{#1}%
+}
+
+%% 参考文献统一入口：标题格式、页眉、PDF锚点、目录一条龙
+\newcommand\NJUSTprintbib{%
+  \clearpage
+  \phantomsection
+  \printbibliography[heading=bibnonbody,title={参考文献}]%
 }
 
 \endinput
