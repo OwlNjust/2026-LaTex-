@@ -477,11 +477,18 @@
 \newcommand{\dw}[2]{~\SI{#1}{#2}}
 \newcommand{\td}[0]{~\~{}~}
 
-%% 非正文章节标题格式（三号宋体加粗居中，段前段后18pt）
-\defbibheading{bibnonbody}{%
+%% 参考文献标题格式（三号宋体加粗居中，段前段后18pt）
+\newcommand\NJUST@bibheading[1]{%
   \ctexset{chapter={format+={\centering\zihao{3}}}}%
   \chapter*{#1}%
+  \phantomsection%
+  \markboth{#1}{#1}%
   \addcontentsline{toc}{chapter}{#1}%
+}
+\defbibheading{bibnonbody}{\NJUST@bibheading{#1}}
+
+\newcommand\NJUSTprintbib{%
+  \printbibliography[heading=bibnonbody,title={\NJUST@bibname}]%
 }
 
 \endinput
