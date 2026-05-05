@@ -38,7 +38,7 @@
 %% ========================================
 \RequirePackage{fancyhdr}
 \RequirePackage{mathtools,amsthm,amsfonts,amssymb,bm}
-\RequirePackage{graphicx,flafter}
+\RequirePackage{graphicx,flafter,float}
 \RequirePackage[margin=10.5pt,font=small]{caption}
 \RequirePackage[section]{placeins}
 
