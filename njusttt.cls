@@ -469,11 +469,11 @@
 \newcommand{\dw}[2]{~\SI{#1}{#2}}
 \newcommand{\td}[0]{~\~{}~}
 
-\newcommand\NJUSTprintbib{
-  \cleardoublepage
-  \phantomsection
-  \addcontentsline{toc}{chapter}{\NJUST@bibname}
-  \printbibliography
+%% 非正文章节标题格式（三号宋体加粗居中，段前段后18pt）
+\defbibheading{bibnonbody}{%
+  \ctexset{chapter={format+={\centering\zihao{3}}}}%
+  \chapter*{#1}%
+  \addcontentsline{toc}{chapter}{#1}%
 }
 
 \endinput
