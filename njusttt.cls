@@ -136,9 +136,10 @@
 \xeCJKsetup{CJKecglue={\hskip 0pt plus 0.08\baselineskip}}
 
 %% Fixed 20pt line spacing for body text (2026 spec)
+%% 12pt字号默认baselineskip=14.5pt，乘1.379得20pt
 \RequirePackage{setspace}
 \setstretch{1.0}
-\renewcommand{\baselinestretch}{1.667}
+\linespread{1.379}
 
 %% ========================================
 %%  Headers and footers
@@ -171,11 +172,11 @@
   \begin{center}
 
     %% Logo
-    \includegraphics[width=0.7\textwidth]{fig/logo/njust.eps}
+    \includegraphics[height=3cm,keepaspectratio]{fig/logo/njust.eps}
     \vskip 20pt
 
     %% Report type
-    {\songbf\fontsize{26pt}{32pt}\selectfont 毕\hspace{0.5em}业\hspace{0.5em}设\hspace{0.5em}计（论\hspace{0.5em}文）报\hspace{0.5em}告}
+    {\kaishu\fontsize{32pt}{40pt}\selectfont 毕\hspace{0.5em}业\hspace{0.5em}设\hspace{0.5em}计（论\hspace{0.5em}文）报\hspace{0.5em}告}
     \vskip 36pt
 
     %% Paper title (小一黑体加粗，每行等长下划线)
