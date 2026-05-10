@@ -1,7 +1,7 @@
 # 南京理工大学本科毕业设计（论文）报告 LaTeX 模板
 
 基于 [pasteller/njusttt](https://github.com/pasteller/njusttt) 重构，严格遵循《南京理工大学本科毕业设计（论文）报告撰写格式》（2026版）。
-
+由于项目历史遗留问题，如果需要修改英文封面的内容，请在njusttt.def文件中找到对应位置修改。
 ## 快速开始
 
 1. 下载本仓库
